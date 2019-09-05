@@ -6,35 +6,78 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Pick'em League</title> 
+    <title>Gridiron Pick'em</title>     
 
-    <!--Bootstrap core CSS-->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--Custom styles for this template-->
     <link rel="stylesheet" href="css/cover.css">
+    <link rel="stylesheet" href="css/signin.css">
+
+    
 </head>
 
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
-            <div class="inner">
-                <h3 class="masthead-brand">Pick'em League</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Picks</a>
-                    <a class="nav-link" href="#">My Account</a>
-                </nav>
-            </div>
+            
         </header>
 
+    <!-- TODO: mess with this container (or make a new one) to adjust the sizing of this form-->
+    <!-- <div class="cover-container d-inline-flex w-100 h-100 p-3 mx-auto flex-column"> -->
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit
-                the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-            </p>
-        </main>        
+            <div id="landing">
+                <h1 class="cover-heading">Welcome to the Gridiron!</h1>
+                <br>                
+                <!-- <p class="lead">Create an account or log in to start picking...</p> -->
+                <form id="signinForm" class="form-signin" action="" style="display:block">
+                    <h1 class="h4 mb-3 font-weight-normal">Please log in</h1>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email" id="signinEmail" class="form-control" placeholder="Email Address" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="signinPassword" class="form-control" placeholder="Password" required>
+                    <div class="checkbox mb-3" id="rememberMe">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="signin-button" onclick="HandleSignin()">Sign in</button>                                    
+                </form>
+                
+                <div class="divider">
+                    <hr class="hr-text" data-content="OR">
+                </div>
+
+                <p class="lead">                    
+                    <a href="#" class="btn btn-lg btn-secondary" onclick="ShowCreateAccountForm()">Create an account</a>
+                </p>                
+            </div>
+
+            <form id="createAccountForm" class="form-create" action="" style="display:none">
+                <h1 class="h3 mb-3 font-weight-normal">Please create an account</h1>
+                <label for="inputName" class="sr-only">Your name</label>
+                <input for="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="createEmail" class="form-control" placeholder="Email Address" required>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="createPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword" class="sr-only">Re-enter password</label>
+                <input type="password" id="verifyCreatePassword" class="form-control" placeholder="Re-enter password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="create-account-button" onclick="HandleCreateAccount()">Create account</button> 
+            </form>
+
+            
+            <!-- Container where we'll display the user details -->
+            <div class="quickstart-user-details-container">
+                Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                <div>Firebase auth <code>currentUser</code> object value:</div>
+                <pre><code id="quickstart-account-details">null</code></pre>
+            </div>
+        </main> 
+          
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
@@ -44,16 +87,33 @@
         </footer>
     </div>
 
-    <!-- Optional JavaScript -->
+    <!-- Firebase JavaScript -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.5.0/firebase-app.js"></script>
+
+    <!-- Firebase Authentication product -->
+    <script src="/__/firebase/6.5.0/firebase-auth.js"></script>
+    <!-- Firebase Firestore product -->
+    <script src="/__/firebase/6.5.0/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <!-- Bootstrap Javascript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script> -->
     <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
     <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Gridiron Pick'em Javascript -->
+    <script src="js/index.js"></script>
 </body>
 
 </html>

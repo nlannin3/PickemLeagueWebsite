@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Gridiron Pick'em</title> 
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+            $(function() {
+                $('#nav').load('nav.html');
+            });
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Custom styles for this template-->
+    <link rel="stylesheet" href="css/cover.css">
+    <link rel="stylesheet" href="css/signin.css">
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div id="nav"></div>
+        </header>
+
+    <!-- TODO: mess with this container (or make a new one) to adjust the sizing of this form-->
+    <!-- <div class="cover-container d-inline-flex w-100 h-100 p-3 mx-auto flex-column"> -->
+        <main role="main" class="inner cover">
+            <div id="landing">
+                <h1 class="cover-heading">HOME PAGE!</h1>
+                <br>                
+                <!-- <p class="lead">Create an account or log in to start picking...</p> -->
+            </div>
+        </main> 
+          
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                        href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Firebase JavaScript -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.5.0/firebase-app.js"></script>
+
+    <!-- Firebase Authentication product -->
+    <script src="/__/firebase/6.5.0/firebase-auth.js"></script>
+    <!-- Firebase Firestore product -->
+    <script src="/__/firebase/6.5.0/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <!-- Bootstrap Javascript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script> -->
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Gridiron Pick'em Javascript -->
+    <!-- <script src="js/index.js"></script> -->
+</body>
+
+</html>
